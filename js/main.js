@@ -29,4 +29,7 @@ $(function() {
     $(".intro text").removeClass("display-none");
     $(".intro").addClass("go");
   }, 4800);
+  setTimeout(function() {
+    $(".resume").addClass("opacity-0");
+  }, 6500);
 });
