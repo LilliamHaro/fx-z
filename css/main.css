@@ -1,126 +1,149 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
 }
 
 .relative {
-    position: relative;
+  position: relative;
 }
 .width-100 {
-    width: 100%!important;
+  width: 100% !important;
 }
 .width-0 {
-    width: 0!important;
+  width: 0 !important;
 }
-.display-none{
-    display: none;
+.display-none {
+  display: none;
 }
 .opacity-0 {
-    opacity: 0;
+  opacity: 0;
 }
 
-
-.shade-loader{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    transition: width 0.5s;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    z-index: 3;
+.shade-loader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  transition: width 0.5s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  z-index: 3;
 }
 .shade-loader .line {
-    width: 150px;
-    height: 3px;
-    display: inline-block;
-    margin-bottom: 7px;
+  width: 150px;
+  height: 3px;
+  display: inline-block;
+  margin-bottom: 7px;
 }
 
-.shade-loader .line div{
-    background-color: violet;
-    width: 0;
-    height: 100%;
-    transition: 2s ease-in-out;
+.shade-loader .line div {
+  background-color: violet;
+  width: 0;
+  height: 100%;
+  transition: 2s ease-in-out;
 }
-.cube{
-    display: inline-block;
-    transform-style: preserve-3d;
-    transition: transform 0.5s;
+.cube {
+  display: inline-block;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
 }
 .face-cube {
-    margin: 15px;
-    font-size: 20px; 
-    text-align: center;
-    transform: translateZ(20px);
-    transition: opacity 2s;
-    color: #f6bdfa;
+  margin: 15px;
+  font-size: 20px;
+  text-align: center;
+  transform: translateZ(20px);
+  transition: opacity 2s;
+  color: #f6bdfa;
 }
 
 .to-top {
-    transform: rotateX(89deg) translateZ(30px);
+  transform: rotateX(89deg) translateZ(30px);
 }
 .to-bottom {
-    transform: rotateX(-89deg) translateZ(30px);
+  transform: rotateX(-89deg) translateZ(30px);
 }
 
 .rgba-loader {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.3);
-    z-index: 2;
-    transition: width 0.5s;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 2;
+  transition: width 0.5s;
 }
-
 
 main {
-    background-color:rgb(26, 26, 26);
-    min-height: 100vh;
+  background-color: rgb(48, 48, 48);
+  min-height: 100vh;
 }
 .resume {
-    height: 100vh;
-    position: absolute;
-    width: 100%;
-    top: 0;
-    right: 0;
+  height: 100vh;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  right: 0;
 }
 svg.intro {
-    max-width: 30vw;
-    position: absolute;
-    top: 53%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  max-width: 30vw;
+  position: absolute;
+  top: 53%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+svg.intro .text {
+  font-size: 20px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+svg.intro.go .subtitle {
+  font-size: 12px;
+}
+svg.intro.go .text-stroke {
+  fill: none;
+  stroke: #f6bdfa;
+  stroke-width: 2.8px;
+  stroke-dashoffset: -150;
+  stroke-dasharray: 900;
+  animation: dash 1s ease-out forwards;
+}
+
+@keyframes dash {
+  100% {
+    stroke-dashoffset: 0;
   }
-  svg.intro .text {
-    font-size: 20px;
-    text-transform: uppercase;
-    text-align: center;
+}
+
+@media (max-width: 769px) {
+    svg.intro {
+        max-width: 50vw;
+      }
+      .shade-loader .line {
+          height: 2px;
+          margin-bottom: 5px;
+      }
+      .face-cube {
+        margin: 7px;
+      }
+}
+
+@media (max-width: 600px) {
+  svg.intro {
+    max-width: 70vw;
+  }
+  .shade-loader .line {
+    width: 80px;
+  }
+  .face-cube {
+    margin: 7px;
+    font-size: 14px;
   }
  
-  svg.intro.go .subtitle{
-      font-size: 12px;
-  }
-  svg.intro.go .text-stroke {
-    fill: none;
-    stroke: #f6bdfa;
-    stroke-width: 2.8px;
-    stroke-dashoffset:-150;
-    stroke-dasharray: 900; 
-    animation: dash 1s ease-out forwards;
-  }
- 
-  @keyframes dash {
-    100% {
-      stroke-dashoffset: 0;
-    }
-  }
- 
-  
+}
